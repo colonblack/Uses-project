@@ -16,7 +16,6 @@ const actions={
         const res = await axios.get('user');
 
         commit('SetUsers', res.data.data)
-       // console.log(res.data)
     },
     
     

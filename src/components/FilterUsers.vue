@@ -57,8 +57,7 @@ export default{
     methods:{
         getUrlObject(){
             const base64String = atob(this.$route.params.id)
-            // console.log(this.$route.params.id)
-            // console.log(JSON.parse(base64String))
+           
             this.user= JSON.parse(base64String)
         }
     }

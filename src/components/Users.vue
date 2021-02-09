@@ -56,7 +56,6 @@ export default {
        getSingleUser: async function( user){
         const user64 = btoa(JSON.stringify(user))
         //debugger;
-       // console.log()
         this.$router.push({ path: `/detail/${user64}` })
    
     },
@@ -65,14 +64,12 @@ export default {
        
         ]),
         paginationCallBack: async function(page,records){
-            alert('hehp')
         },
         getFirstPage(allUsers, perPage, page){
             if(this.page == 1 ){
                 return allUsers.slice(0, perPage)
             }else{
-                console.log(this.page)
-                return allUsers.slice((this.page*this.perPage) -1, (this.page*this.perPage) + (perPage-1))
+                return allUsers.slice((this.page*(this.perPage)/2) -1, (this.page*(this.perPage)/2) + (perPage-1))
             }
         }
     },
@@ -82,7 +79,6 @@ export default {
     },
     mounted(){
         const user= this.$store.getters.fetchUsers;
-        //console.log('logginh', user)
       this.users.push(user)
 
     }
