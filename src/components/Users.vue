@@ -28,7 +28,7 @@
             <td>{{ entry.email }}</td> 
             <td >
                 <button type="button" class="btn btn-primary" @click="getSingleUser(entry)"
-                 >Primary</button></td>
+                 >View</button></td>
         </tr>
       </tbody>
     </table>
@@ -63,13 +63,13 @@ export default {
             "fetchUsers",
        
         ]),
-        paginationCallBack: async function(page,records){
+        paginationCallBack: async function(){
         },
         getFirstPage(allUsers, perPage, page){
             if(this.page == 1 ){
                 return allUsers.slice(0, perPage)
             }else{
-                return allUsers.slice((this.page*(this.perPage)/2) -1, (this.page*(this.perPage)/2) + (perPage-1))
+                return allUsers.slice((this.page*(this.perPage)/2) -1, (page*(this.perPage)/2) + (perPage-1))
             }
         }
     },
